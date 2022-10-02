@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr 80%; 
+  max-width: 480px;
+  place-items: baseline;
+}
+
+.table > div {
+margin: 2px;
+background: powderblue;
+padding: 5px;
+}
+
+.table > div:nth-child(even) {
+
+background: none;
+}

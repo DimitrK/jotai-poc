@@ -1,0 +1,9 @@
+form {
+    background-color: antiquewhite;
+    padding: 2em;
+}
+
+form input {
+    height: 2em;
+    margin-right: 2em;
+}
