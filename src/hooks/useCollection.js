@@ -2,55 +2,6 @@ import { atom, useAtom, useSetAtom, useAtomValue } from "jotai";
 import { useEffect, useMemo, useState } from "react";
 const defaultSelector = (i) => i;
 
-// export const collectionAtom = (initialValue, selector = defaultSelector) => {
-//   const _atom = atom(initialValue);
-//   const readOnlyAtom = atom((get) => {
-//     console.log("GETreadOnlyAtom");
-//     return get(_atom);
-//   });
-//   const removeItemAtom = atom(null, (get, set, itemOrSelection) => {
-//     console.log("SETremoveItemAtom");
-//     set(_atom,
-//       get(_atom).filter(
-//         (item) =>
-//           selector(item) !== itemOrSelection &&
-//           selector(item) !== selector(itemOrSelection)
-//       )
-//     );
-//   });
-//   const addItemAtom = atom(null, (get, set, item) => {
-//     console.log("SETaddItemAtom");
-//     set(_atom, [...get(_atom), item]);
-//   });
-//   const countItemsAtom = atom((get) => {
-//     console.log("GETcountItemsAtom");
-//     return get(_atom).length;
-//   });
-
-//   const actionsAtom = atom({});
-
-//   const useAtomCollectionActions = () => {
-//     const [col] = useAtom(_atom);
-//     const [actions, setActions] = useAtom(actionsAtom);
-//     const removeItem = useSetAtom(removeItemAtom);
-//     const countItems = useAtomValue(countItemsAtom);
-//     const addItem = useSetAtom(addItemAtom);
-
-//     useEffect(() => {
-//         console.log('setting actions')
-//       setActions({
-//         removeItem,
-//         count: countItems,
-//         addItem,
-//       });
-//     }, [col]);
-
-//     return actions;
-//   };
-
-//   return [readOnlyAtom, useAtomCollectionActions];
-// };
-
 export const useAtomCollection = (_atom, { selector = defaultSelector }) => {
   useEffect(() => {
     console.log("_atom changed");
